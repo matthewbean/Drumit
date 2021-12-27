@@ -1,0 +1,7 @@
+@import 'colors.scss';
+.board{
+    min-width: 40rem;
+    padding: 1rem;
+    background: $background;
+    border-radius: 10px;
+}

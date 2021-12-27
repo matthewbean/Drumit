@@ -1,0 +1,19 @@
+@import 'colors.scss';
+.row{
+ margin: 0 auto;
+ position: relative;
+ height: 2rem;
+ display: flex;
+ align-items: stretch;
+
+}
+.label{
+    background: $inactive;
+    color: $text;
+    border: 1px solid black;
+    width: 5rem;
+    flex: 1 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

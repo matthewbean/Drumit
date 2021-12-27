@@ -1,0 +1,14 @@
+@import 'colors.scss';
+.indicator{
+    height: .5rem;
+    width: 2rem;
+    border: solid black 1px;
+    display: inline-block;
+}
+
+.active{
+    background-color: $active;
+}
+.disabled{
+    background-color: $inactive;
+}

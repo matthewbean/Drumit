@@ -1,2 +1,3 @@
 export const SWITCH_BUTTON  = 'SWITCH_BUTTON'
 export const INCREMENT_COUNTER  = 'INCREMENT_COUNTER'
+export const SET_BPM  = 'SET_BPM'

@@ -1,5 +1,5 @@
 import React from 'react'
-import './button.scss'
+import '../styles/button.scss'
 
 export default function Button({ active, switchButton, row, index }) {
     
