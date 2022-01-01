@@ -1,6 +1,7 @@
+@import 'colors.scss';
 .App {
   text-align: center;
-  background: #222;
+  background: $background;
   height: 100vh;
   display: flex;
   justify-content: center;

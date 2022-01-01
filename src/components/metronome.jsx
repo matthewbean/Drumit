@@ -8,7 +8,7 @@ export default function Metronome(props) {
   const [playing, setplaying] = useState(false);
   //setup context
   const appContext = useContext(AppContext);
-  const { counter, incrementCounter, board, bpm, getCounter } = appContext;
+  const { counter, incrementCounter, board, activeBoard, bpm, getCounter } = appContext;
 
   //function to stop loop
   const stop = () => {
@@ -28,23 +28,14 @@ export default function Metronome(props) {
   useEffect(() => {
     // only run if if loop is supposed to be playing
     if (playing) {
+      //grabbed the URLs from state
+      let urls= {}
+      board[activeBoard].forEach((item)=>{
+        urls[item.key]=item.file
+      })
       //instantiate instrument
       var sampler = new Tone.Sampler({
-        urls: {
-          C4: "C4.mp3",
-          "C#4": "C-4.mp3",
-          D4: "D4.mp3",
-          "D#4": "D-4.mp3",
-          E4: "E4.mp3",
-          F4: "F4.mp3",
-          "F#4": "F-4.mp3",
-          G4: "G4.mp3",
-          "G#4": "G-4.mp3",
-          A5: "A5.mp3",
-          "A#5": "A-5.mp3",
-          B5: "B5.mp3",
-          C5: "C5.mp3",
-        },
+        urls: urls,
         release: 1,
         baseUrl: "../sounds/",
       }).toDestination();
@@ -53,7 +44,7 @@ export default function Metronome(props) {
       var index = counter;
       //set up music loop
       var musicLoop = new Tone.Loop((time) => {
-        board.forEach((item, i) => {
+        board[activeBoard].forEach((item, i) => {
           if (item.values[index]) {
             sampler.triggerAttackRelease(item.key, "16n", time);
           }
@@ -86,13 +77,7 @@ export default function Metronome(props) {
 
   return (
     <>
-      <button onClick={start} id="a">
-        Start
-      </button>
-      <button onClick={stop} id="a">
-        Stop
-      </button>
-      <Settings></Settings>
+      <Settings start={start} stop={stop}></Settings>
     </>
   );
 }

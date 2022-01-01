@@ -1,14 +1,33 @@
 @import 'colors.scss';
 .indicator{
-    height: .5rem;
+    height: .625rem;
     width: 2rem;
-    border: solid black 1px;
+    border: solid $border 1px;
+    border-bottom: 2px solid $border;
+    border-top: 2px solid $border;
     display: inline-block;
 }
-
+.indicator:nth-child(4n-3)::before{
+    content: '';
+    height: 3px;
+    position: relative;
+    top: -5px;
+    left: 0px;
+    width: calc(2rem - 2px);
+    display: block;
+    background: #829AB1;
+}
 .active{
     background-color: $active;
 }
 .disabled{
     background-color: $inactive;
+}
+
+
+.indicator:first-child{
+    border-left: 2px solid $border;
+} 
+.indicator:last-child{
+    border-right: 2px solid $border;
 }

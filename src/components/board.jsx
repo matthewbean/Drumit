@@ -8,15 +8,17 @@ import Metronome from './metronome';
 export default function Board(props) {
     //setup context
     const appContext = useContext(AppContext)
-    const { board, switchButton } = appContext;
+    const { board, activeBoard, switchButton } = appContext;
 
     return (
         <div className='board'>
             <Metronome></Metronome>
             <IndicatorRow></IndicatorRow>
-            {board.map((item, i)=>(
+            <div className="boardSquares">
+            {board[activeBoard].map((item, i)=>(
                 <Row switchButton={switchButton} row={item} key={i} index={i}></Row>
             ))}
+            </div>
         </div>
     )
 }

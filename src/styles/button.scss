@@ -2,17 +2,16 @@
 .button{
     height: 2rem;
     width:2rem;
-    // margin-right: .5rem;
-    border: 1px black solid;
+    border: 1px $border solid;
+
 }  
+
 .button:active{
     background: $clicked;
 }
-.button:nth-child(4n+5){
-    // margin-right: 1rem;
-}
+
 .active{
-    background-color: $active;
+    border-color: $border-light;
 }
 .disabled{
     background-color: $inactive;

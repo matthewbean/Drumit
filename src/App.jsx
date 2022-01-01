@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './styles/App.scss'
 import Board from './components/board'
 import AppState from './context/AppState'
 function App() {

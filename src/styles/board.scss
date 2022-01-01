@@ -2,6 +2,8 @@
 .board{
     min-width: 40rem;
     padding: 1rem;
-    background: $background;
-    border-radius: 10px;
+    background: $board;
+    border-radius: 2px;
+    // border: 2px solid $border;
+    box-shadow: 4px 4px 12px rgba($color: #000, $alpha: .2);
 }

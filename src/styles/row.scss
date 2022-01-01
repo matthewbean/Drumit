@@ -7,11 +7,25 @@
  align-items: stretch;
 
 }
+.row:first-child span, .row:first-child button{
+    border-top: 2px solid $border;
+}
+.row:last-child span, .row:last-child button{
+    border-bottom: 2px solid $border;
+}
+.row span{
+    border-left: 2px solid $border;
+} 
+.button:last-child{
+    border-right: 2px solid $border;
+}
 .label{
     background: $inactive;
     color: $text;
-    border: 1px solid black;
+    border: 1px solid $border;
     width: 5rem;
+    font-size: .75rem;
+    font-weight: 700;
     flex: 1 0 5rem;
     display: flex;
     justify-content: center;
