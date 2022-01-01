@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import AppContext from "../context/appContext";
 import "../styles/indicatorRow.scss";
-import Indicator from "./Indicator";
+import Indicator from "./indicator";
 
 export default function Board(props) {
   //setup context
